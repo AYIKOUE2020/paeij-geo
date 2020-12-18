@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import "./index.css"
 import App from "./App"
 import reportWebVitals from "./reportWebVitals"
-import { ChakraProvider } from "@chakra-ui/react"
+import "bootstrap/dist/css/bootstrap.min.css"
 import axios from "axios"
 
 axios.defaults.baseURL = "http://paeijsp.test/api"
@@ -11,9 +11,7 @@ axios.defaults.headers.common["Accept"] = "application/json"
 
 ReactDOM.render(
   <React.StrictMode>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 )
