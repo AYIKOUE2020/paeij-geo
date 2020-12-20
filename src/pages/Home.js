@@ -1,7 +1,148 @@
 import React from "react"
+import { Col, Row, Card } from "react-bootstrap"
+import { Helmet } from "react-helmet-async"
+import { HiArrowRight } from "react-icons/hi"
+import { BsAppIndicator } from "react-icons/bs"
+import { FaUserFriends, FaCheckSquare } from "react-icons/fa"
 
 const Home = () => {
-  return <div>Home page</div>
+  return (
+    <div>
+      <Helmet>
+        <title>Accueil</title>
+      </Helmet>
+      <Apropos />
+    </div>
+  )
 }
+
+const Apropos = () => (
+  <div className='a-propos'>
+    <h1 className=''>Présentation du PAEIJ-SP</h1>
+    <Row>
+      <Col xs={12} md={6}>
+        <p>
+          Afin de favoriser la promotion de l’entreprenariat dans le secteur
+          agricole, l’État Togolais, à travers le ministre du développement à la
+          base de l’Artisanat, de la jeunesse et de l’Emploi des jeunes dans les
+          Secteurs Porteurs a mis en place le Projet d’appui à l’employabilité
+          et à l’insertion des jeunes dans les secteurs porteurs (PAEIJ-SP).
+        </p>
+      </Col>
+      <Col xs={12} md={6}>
+        <img
+          alt='Bénéficiaire PAEIJ'
+          src={`${process.env.PUBLIC_URL}/img/photoPaeij.jpg`}
+          width='100%'
+        />
+      </Col>
+      <Col className='mt-3'>
+        <p>
+          Son objectif premier est de contribuer à créer les conditions d’une
+          croissance économique plus inclusive à travers le renforcement de
+          l’employabilité des jeunes et la promotion de l’entrepreneuriat des
+          jeunes dans les secteurs porteurs par l’approche chaine de valeur
+          agricole et le développement de clusters agro-industriels. Cette
+          approche est combinée avec l’approche « faire-faire ».
+        </p>
+      </Col>
+    </Row>
+    <h2 className='my-3'>Groupes cibles</h2>
+    <Row>
+      <Col sm={12} md={6}>
+        <Card className='shadow card__paeij'>
+          <Card.Body as='p'>
+            Producteurs et éleveurs (en coopératives commerciales) dont 40% de
+            femmes
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col sm={12} md={6}>
+        <Card className='shadow card__paeij'>
+          <Card.Body as='p'>
+            Jeunes hommes et femmes de 18 à 45 ans désireux de porter des
+            initiatives entrepreneuriales individuelles
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    <Row className='my-3'>
+      <Col sm={12} md={6}>
+        <Card className='shadow card__paeij'>
+          <Card.Body as='p'>
+            Femmes issues des villages enclavés et vulnérables
+          </Card.Body>
+        </Card>
+      </Col>
+      <Col sm={12} md={6}>
+        <Card className='shadow card__paeij'>
+          <Card.Body as='p'>
+            Petites et moyennes entreprises structurante (transformatrices,
+            agrégatrice) établies
+          </Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    <h2 className='my-3'>Filières ciblées</h2>
+    <Row>
+      <Col>
+        <Card className='shadow border-0'>
+          <Card.Body>This is some text within a card body.</Card.Body>
+        </Card>
+      </Col>
+    </Row>
+    <Row className='mt-3'>
+      <Col>
+        <h2>Zones d’intervention</h2>
+        <p className='d-flex align-items-center'>
+          Territorial national, avec une forte concentration des activités dans
+          les régions les plus pauvres (savanes, centrale et plateaux).
+        </p>
+      </Col>
+    </Row>
+    <Row className='mt-3'>
+      <Col>
+        <h1 className=''>Présentation synthétique du géoréférencement</h1>
+        <p>
+          Fort des résultats intéressants enregistrés par le projet, la revue à
+          mi-parcours du projet réalisée en décembre 2018 a recommandé de rendre
+          visibles et accessibles ces résultats aux parties prenantes du projet
+          via un système d’information géographique. Ce qui nécessite la mise en
+          place d’un système d’information géographique. En vue de mettre en
+          place un système d’information géographique du projet, l’UGP veut
+          réaliser une étude de géolocalisation des réalisations du projet.
+        </p>
+        <p>
+          La géolocalisation a consisté à faciliter l’identification et le
+          repérage des petites et moyennes entreprises (PME), des petites et
+          moyennes industries (PMI) et des micro-entreprises accompagnées par le
+          PAEIJ-SP en relevant leurs coordonnées GPS, en les photographiant et
+          en collectant des informations relatives à leurs activités. Il s’agira
+          de faire un géo référencement des réalisations du projet. Notons que
+          le géoréférencement, selon Wikipédia, est le processus dans lequel on
+          applique à une entité cartographique un emplacement spatial en lui
+          donnant des coordonnées géographiques et en appliquant une
+          transformation. C’est une action qui consiste à relier un objet et les
+          données, les géoréférences, qui y sont associées à sa position dans
+          l'espace par rapport à un système de coordonnées géographiques.
+        </p>
+      </Col>
+    </Row>
+    <Row className='mt-3'>
+      <Col>
+        <h1 className=''>Résultats</h1>
+      </Col>
+    </Row>
+    <Row className='mt-3'>
+      <Col>
+        <p>
+          <a href='https://www.paeijsp.com/' target='_blank' rel='noreferrer'>
+            En savoir plus <HiArrowRight />
+          </a>
+        </p>
+      </Col>
+    </Row>
+  </div>
+)
 
 export default Home

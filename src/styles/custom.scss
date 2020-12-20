@@ -1,0 +1,71 @@
+$body-bg: #f8f9fa;
+$body-color: #343a40;
+$paeij-vert: #116c52;
+$paeij-jaune: #ffce1a;
+
+@import "~bootstrap/scss/bootstrap";
+
+//Reset
+body {
+  font-family: Poppins, sans-serif;
+}
+main {
+  min-height: 80vh;
+}
+
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
+h3,
+h4 {
+  padding: 1.25rem;
+}
+/*
+** Navbar
+*/
+.header {
+  background-color: $paeij-vert !important;
+  border-top: 4px solid $paeij-jaune;
+  a {
+    font-weight: 500;
+  }
+}
+
+// Home page
+.a-propos {
+  h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4b5563;
+  }
+  p {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #6b7280;
+    a {
+      color: $paeij-vert;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+  .card__paeij {
+    border: 0;
+    border-left: 4px solid $paeij-jaune;
+    p {
+      line-height: 2rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
+}
