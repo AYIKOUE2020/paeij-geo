@@ -21,7 +21,7 @@ const Header = () => {
         variant='dark'
         expand='lg'
         collapseOnSelect
-        sticky='top'
+        fixed='top'
         className='header shadow'
       >
         <Container>
@@ -30,9 +30,7 @@ const Header = () => {
               <img
                 alt='Logo Paeijsp'
                 src={`${process.env.PUBLIC_URL}/img/logo-geo.png`}
-                width='250'
-                height='100%'
-                className='d-inline-block align-top'
+                className='d-inline-block align-top logo'
               />
             </Navbar.Brand>
           </LinkContainer>

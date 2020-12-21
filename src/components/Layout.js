@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      <main className='py-5'>
+      <main className='main py-3'>
         <Container>{children}</Container>
       </main>
     </div>

@@ -2,6 +2,7 @@ $body-bg: #f8f9fa;
 $body-color: #343a40;
 $paeij-vert: #116c52;
 $paeij-jaune: #ffce1a;
+$paeij-rouge: #db1018;
 
 @import "~bootstrap/scss/bootstrap";
 
@@ -11,6 +12,7 @@ body {
 }
 main {
   min-height: 80vh;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -22,10 +24,10 @@ h2 {
   padding: 0.5rem 0;
 }
 
-h3,
-h4 {
-  padding: 1.25rem;
-}
+// h3,
+// h4 {
+//   padding: 1.25rem;
+// }
 /*
 ** Navbar
 */
@@ -35,16 +37,21 @@ h4 {
   a {
     font-weight: 500;
   }
+  .logo {
+    width: 14rem;
+  }
 }
-
+.main {
+  margin-top: 100px;
+}
 // Home page
 .a-propos {
   h1 {
-    font-size: 3.75rem;
+    font-size: 3rem;
     font-weight: bold;
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     color: #4b5563;
   }
