@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import { Helmet, HelmetProvider } from "react-helmet-async"
 import Home from "./pages/Home"
 import Cluster from "./pages/Cluster"
@@ -13,21 +13,37 @@ import Layout from "./components/Layout"
 const App = () => {
   return (
     <HelmetProvider>
-      <BrowserRouter>
+      <Router>
         <Helmet
           titleTemplate='%s | PAEIJ-SP Géo-référencement'
           defaultTitle='PAEIJ-SP Géo-référencement'
         />
         <Layout>
-          <Route exact path='/' component={Home} />
-          <Route path='/realisations' component={Realisations} />
-          <Route path='/chaine-valeur' component={ChaineValeur} />
-          <Route path='/clusters' component={Cluster} />
-          <Route path='/statistiques' component={Statistiques} />
-          <Route path='/liste-realisations' component={Liste} />
-          <Route path='/search' component={Recherche} />
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route path='/realisations'>
+              <Realisations />
+            </Route>
+            <Route path='/chaine-valeur'>
+              <ChaineValeur />
+            </Route>
+            <Route path='/clusters'>
+              <Cluster />
+            </Route>
+            <Route path='/statistiques'>
+              <Statistiques />
+            </Route>
+            <Route path='/liste-realisations'>
+              <Liste />
+            </Route>
+            <Route path='/search'>
+              <Recherche />
+            </Route>
+          </Switch>
         </Layout>
-      </BrowserRouter>
+      </Router>
     </HelmetProvider>
   )
 }
