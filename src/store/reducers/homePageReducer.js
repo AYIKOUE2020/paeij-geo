@@ -4,7 +4,10 @@ import {
   HOME_PAGE_STATS_SUCCESS,
 } from "../constants/homePageStats"
 
-export const homePageStatsReducer = (state = {}, { type, payload }) => {
+export const homePageStatsReducer = (
+  state = { stats: {} },
+  { type, payload }
+) => {
   switch (type) {
     case HOME_PAGE_STATS_REQUEST:
       return {
