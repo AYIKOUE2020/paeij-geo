@@ -7,12 +7,15 @@ import {
   prefectureReducer,
   villageReducer,
 } from "./reducers/searchReducer"
+import { dashboardDetails, dashboardList } from "./reducers/dashboardReducer"
 
 const reducers = combineReducers({
   homePageStats: homePageStatsReducer,
   prefecturesList: prefectureReducer,
   cantonsList: cantonReducer,
   villagesList: villageReducer,
+  realisationsList: dashboardList,
+  realisationDetails: dashboardDetails,
 })
 
 const middleware = [thunk]

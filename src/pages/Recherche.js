@@ -3,6 +3,7 @@ import { Card, Form, Row, Col, Button } from "react-bootstrap"
 import { Helmet } from "react-helmet-async"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
+import queryString from "query-string"
 import FormContainer from "../components/FormContainer"
 import {
   getCantons,
@@ -13,13 +14,7 @@ import {
 const Recherche = () => {
   const dispatch = useDispatch()
   const history = useHistory()
-  const regions = [
-    { id: 1, region: "Maritime" },
-    { id: 2, region: "Plateaux" },
-    { id: 3, region: "Centrale" },
-    { id: 4, region: "Kara" },
-    { id: 5, region: "Savanes" },
-  ]
+  const regions = ["Maritime", "Plateaux", "Centrale", "Kara", "Savanes"]
 
   const [region, setRegion] = useState("")
   const [prefecture, setPrefecture] = useState("")
@@ -46,17 +41,29 @@ const Recherche = () => {
 
   const handleSearch = (e) => {
     e.preventDefault()
-    history.push("/realisations")
+    const parsed = {
+      region,
+      prefecture,
+      canton,
+      village,
+      campagne,
+      composante,
+    }
+    const stringified = queryString.stringify(parsed, {
+      skipNull: true,
+      skipEmptyString: true,
+    })
+    history.push(`/realisations?${stringified}`)
   }
 
   return (
     <div>
       <Helmet>
-        <title>Rechercher</title>
+        <title>Filtrer les réalisations</title>
       </Helmet>
       <FormContainer>
         <Card body className='search border-0 shadow'>
-          <h1>Rechercher</h1>
+          <h1>Filtrer les réalisations</h1>
           <Form onSubmit={handleSearch}>
             <Row>
               <Col sm={12} md={6}>
@@ -70,8 +77,8 @@ const Recherche = () => {
                   >
                     <option value=''>Sélectionner</option>
                     {regions.map((region) => (
-                      <option value={region.id} key={region.id}>
-                        {region.region}
+                      <option value={region} key={region}>
+                        {region}
                       </option>
                     ))}
                   </Form.Control>
@@ -89,7 +96,10 @@ const Recherche = () => {
                     <option value=''>Sélectionner</option>
                     {prefectures &&
                       prefectures.map((prefecture) => (
-                        <option value={prefecture.id} key={prefecture.id}>
+                        <option
+                          value={prefecture.prefecture}
+                          key={prefecture.id}
+                        >
                           {prefecture.prefecture}
                         </option>
                       ))}
@@ -110,7 +120,7 @@ const Recherche = () => {
                     <option value=''>Sélectionner</option>
                     {cantons &&
                       cantons.map((canton) => (
-                        <option value={canton.id} key={canton.id}>
+                        <option value={canton.canton} key={canton.id}>
                           {canton.canton}
                         </option>
                       ))}
@@ -129,7 +139,7 @@ const Recherche = () => {
                     <option value=''>Sélectionner</option>
                     {villages &&
                       villages.map((village) => (
-                        <option value={village.id} key={village.id}>
+                        <option value={village.village} key={village.id}>
                           {village.village}
                         </option>
                       ))}
@@ -168,7 +178,7 @@ const Recherche = () => {
               </Form.Control>
             </Form.Group>
             <Button type='submit' variant='primary'>
-              Rechercher
+              Filtrer
             </Button>
           </Form>
         </Card>
