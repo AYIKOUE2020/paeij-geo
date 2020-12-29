@@ -28,9 +28,9 @@ export const dashboardDetails = (
 ) => {
   switch (type) {
     case DASHBOARD_DETAILS_REQUEST:
-      return { loading: true }
+      return { ...state, loading: true }
     case DASHBOARD_DETAILS_SUCCESS:
-      return { loading: false, realisation: payload }
+      return { ...state, loading: false, realisation: payload }
     case DASHBOARD_DETAILS_FAIL:
       return { ...state, loading: false, error: payload }
     default:

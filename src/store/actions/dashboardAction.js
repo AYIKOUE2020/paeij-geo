@@ -8,10 +8,10 @@ import {
   DASHBOARD_LIST_SUCCESS,
 } from "../constants/dashboardConstant"
 
-export const getRealisations = () => async (dispatch) => {
+export const getRealisations = (queryString) => async (dispatch) => {
   try {
     dispatch({ type: DASHBOARD_LIST_REQUEST })
-    const { data } = await axios.get(`/dashboard`)
+    const { data } = await axios.get(`/dashboard?${queryString}`)
     dispatch({ type: DASHBOARD_LIST_SUCCESS, payload: data })
   } catch (error) {
     dispatch({

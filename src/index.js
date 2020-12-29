@@ -6,6 +6,7 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import axios from "axios"
 import store from "./store"
+import "leaflet/dist/leaflet.css"
 
 axios.defaults.baseURL = "http://paeijsp.test/api"
 axios.defaults.headers.common["Accept"] = "application/json"

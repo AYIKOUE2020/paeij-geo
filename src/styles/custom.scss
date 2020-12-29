@@ -84,6 +84,25 @@ h2 {
 }
 
 .leaflet-container {
-  height: 120rem;
+  height: 64rem;
   width: 100%;
+}
+
+.sidebar {
+  list-style: none;
+  padding-left: 0;
+  li {
+    padding: 15px 0;
+    a {
+      text-decoration: none;
+      color: rgb(110, 110, 110);
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      &.active {
+        color: #333333;
+      }
+    }
+  }
 }
