@@ -31,7 +31,6 @@ const ChaineValeur = () => {
       <Helmet>
         <title>Cartographie des réalisations par chaine de valeur</title>
       </Helmet>
-      <h1>Cartographie des réalisations par chaine de valeur</h1>
       <Row>
         <Col sm={12} md={3} lg={3}>
           <ul className='sidebar'>

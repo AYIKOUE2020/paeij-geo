@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Card } from "react-bootstrap"
+import { Card,Button } from "react-bootstrap"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import { useDispatch, useSelector } from "react-redux"
 import ReactLeafletKml from "react-leaflet-kml"
@@ -12,6 +12,7 @@ import {
   pinkMarker,
 } from "../components/customIcons"
 import { getRealisations } from "../store/actions/dashboardAction"
+
 
 const MapComponent = () => {
   let { composante } = useParams()
@@ -66,8 +67,16 @@ const MapComponent = () => {
             }
           >
             <Popup>
-              <Card body>
-                <p>{item.composante}</p>
+              <Card style={{ width: "18rem" }}>
+                <Card.Img
+                  variant='top'
+                  src='https://paeij-photos.i2setg.com/media/1603020250937.jpg'
+                />
+                <Card.Body>
+                  <Card.Title>{item.composante}</Card.Title>
+                  <Card.Text>infos</Card.Text>
+                  <Button variant='primary'>Détails</Button>
+                </Card.Body>
               </Card>
             </Popup>
           </Marker>
