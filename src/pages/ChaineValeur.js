@@ -33,15 +33,17 @@ const ChaineValeur = () => {
       </Helmet>
       <Row>
         <Col sm={12} md={3} lg={3}>
-          <ul className='sidebar'>
-            {sidebarMenu.map(({ name, link }) => (
-              <li key={link}>
-                <NavLink activeClassName='active' to={`${url}/${link}`}>
-                  {name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+          <Card body className='border-0 shadow p-0 sidebar-card'>
+            <ul className='sidebar'>
+              {sidebarMenu.map(({ name, link }) => (
+                <li key={link}>
+                  <NavLink activeClassName='active' to={`${url}/${link}`}>
+                    {name}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </Card>
         </Col>
         <Col sm={12} md={9} lg={9}>
           <Card body className='border-0 shadow p-0'>

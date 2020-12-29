@@ -12,34 +12,36 @@ const Realisations = () => {
         <title>Cartographie des réalisations</title>
       </Helmet>
       <Row>
-        <Col sm={12} md={3} lg={3}>
-          <ul className='sidebar'>
-            <li>
-              <NavLink exact activeClassName='active' to={`${url}`}>
-                Ensemble
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName='active' to={`${url}/groupement`}>
-                Groupement
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName='active' to={`${url}/primo`}>
-                Primo
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName='active' to={`${url}/structurante`}>
-                Structurante
-              </NavLink>
-            </li>
-            <li>
-              <NavLink activeClassName='active' to={`${url}/agregatrice`}>
-                Agregatrice
-              </NavLink>
-            </li>
-          </ul>
+        <Col sm={12} md={3} lg={3} className=''>
+          <Card body className='border-0 shadow p-0 sidebar-card'>
+            <ul className='sidebar'>
+              <li>
+                <NavLink exact activeClassName='active' to={`${url}`}>
+                  Ensemble
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName='active' to={`${url}/groupement`}>
+                  Groupement
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName='active' to={`${url}/primo`}>
+                  Primo
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName='active' to={`${url}/structurante`}>
+                  Structurante
+                </NavLink>
+              </li>
+              <li>
+                <NavLink activeClassName='active' to={`${url}/agregatrice`}>
+                  Agregatrice
+                </NavLink>
+              </li>
+            </ul>
+          </Card>
         </Col>
         <Col sm={12} md={9} lg={9}>
           <Card body className='border-0 shadow p-0'>

@@ -56,7 +56,7 @@ h2 {
     color: #4b5563;
   }
   p {
-    line-height: 2.5rem;
+    line-height: 3rem;
     font-size: 1.5rem;
     font-weight: 500;
     color: #6b7280;
@@ -92,17 +92,23 @@ h2 {
   list-style: none;
   padding-left: 0;
   li {
-    padding: 15px 0;
+    padding: 1rem 0;
     a {
       text-decoration: none;
-      color: rgb(110, 110, 110);
+      color: #bdffb5;
       font-size: 1.3rem;
+      width: 100%;
+      padding: 1rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 2px;
       &.active {
-        color: #333333;
+        color: #ffffff;
       }
     }
   }
+}
+
+.sidebar-card {
+  background: linear-gradient(to right, #11998e, #38ef7d);
 }

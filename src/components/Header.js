@@ -24,7 +24,7 @@ const Header = () => {
         fixed='top'
         className='header shadow'
       >
-        <Container>
+        <Container fluid className='px-5'>
           <LinkContainer to='/'>
             <Navbar.Brand className='d-flex align-items-center'>
               <img

@@ -7,7 +7,9 @@ const Layout = ({ children }) => {
     <div>
       <Header />
       <main className='main py-3'>
-        <Container fluid>{children}</Container>
+        <Container fluid className='px-5'>
+          {children}
+        </Container>
       </main>
     </div>
   )

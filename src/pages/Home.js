@@ -49,7 +49,16 @@ const Home = () => {
               width='100%'
             />
           </Col>
-          <Col className='mt-3'>
+        </Row>
+        <Row className='my-3'>
+          <Col xs={12} md={6}>
+            <img
+              alt='Bénéficiaire PAEIJ'
+              src={`${process.env.PUBLIC_URL}/img/geo2.jpg`}
+              width='100%'
+            />
+          </Col>
+          <Col xs={12} md={6} className='mt-3'>
             <p>
               Son objectif premier est de contribuer à créer les conditions
               d’une croissance économique plus inclusive à travers le
@@ -70,31 +79,30 @@ const Home = () => {
                 de femmes
               </Card.Body>
             </Card>
-          </Col>
-          <Col sm={12} md={6}>
             <Card className='shadow card__paeij mb-3'>
               <Card.Body as='p'>
                 Jeunes hommes et femmes de 18 à 45 ans désireux de porter des
                 initiatives entrepreneuriales individuelles
               </Card.Body>
             </Card>
-          </Col>
-        </Row>
-        <Row className=''>
-          <Col sm={12} md={6}>
             <Card className='shadow card__paeij mb-3'>
               <Card.Body as='p'>
                 Femmes issues des villages enclavés et vulnérables
               </Card.Body>
             </Card>
-          </Col>
-          <Col sm={12} md={6}>
             <Card className='shadow card__paeij mb-3'>
               <Card.Body as='p'>
                 Petites et moyennes entreprises structurante (transformatrices,
                 agrégatrice) établies
               </Card.Body>
             </Card>
+          </Col>
+          <Col sm={12} md={6}>
+            <img
+              alt='Bénéficiaire PAEIJ'
+              src={`${process.env.PUBLIC_URL}/img/geo7.jpg`}
+              width='100%'
+            />
           </Col>
         </Row>
         <h2 className='my-3'>Filières ciblées</h2>
@@ -283,7 +291,7 @@ const Home = () => {
         )}
         <hr style={{ width: "50%", padding: "5px" }} />
         <Row className='mt-3'>
-          <Col>
+          <Col sm={12} md={6} lg={6} className=''>
             <p className='text-center'>
               Répartition des bénéficiaires (Groupements et Primos) par région
             </p>
@@ -292,7 +300,7 @@ const Home = () => {
             ) : error ? (
               <Notification variant='danger'>{error}</Notification>
             ) : (
-              <Table striped>
+              <Table striped bordered>
                 <thead>
                   <tr>
                     <th>Région</th>
@@ -316,8 +324,46 @@ const Home = () => {
               </Table>
             )}
           </Col>
+          <Col sm={12} md={6} className=''>
+            <p className='text-center'>
+              Nombre de bénéficiaires ayant mené une activité au cours des
+              différentes campagnes avec le Projet
+            </p>
+            {loading ? (
+              <Loader />
+            ) : error ? (
+              <Notification variant='danger'>{error}</Notification>
+            ) : (
+              <Table striped bordered>
+                <thead>
+                  <tr>
+                    <th>Campagnes</th>
+                    <th>Structurante</th>
+                    <th>Agregatrice</th>
+                    <th>Groupement</th>
+                    <th>Primo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stats &&
+                    stats?.nbBenByCamp &&
+                    benefByCampObjectToArray(stats.nbBenByCamp).map(
+                      (item, i) => (
+                        <tr key={i}>
+                          <td>Campagne {item.campagne}</td>
+                          <td>{item.structurante}</td>
+                          <td>{item.agregatrice}</td>
+                          <td>{item.groupement}</td>
+                          <td>{item.primo}</td>
+                        </tr>
+                      )
+                    )}
+                </tbody>
+              </Table>
+            )}
+          </Col>
         </Row>
-        <hr style={{ width: "50%", padding: "5px" }} />
+        {/* <hr style={{ width: "50%", padding: "5px" }} />
         <Row className='mt-3'>
           <Col>
             <p className='text-center'>
@@ -357,7 +403,7 @@ const Home = () => {
               </Table>
             )}
           </Col>
-        </Row>
+        </Row> */}
 
         <Row className='mt-3'>
           <Col>
