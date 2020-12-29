@@ -8,7 +8,7 @@ import axios from "axios"
 import store from "./store"
 import "leaflet/dist/leaflet.css"
 
-axios.defaults.baseURL = "http://api-paeij.i2setg.com/api"
+axios.defaults.baseURL = "https://api-paeij.i2setg.com/api"
 axios.defaults.headers.common["Accept"] = "application/json"
 
 ReactDOM.render(

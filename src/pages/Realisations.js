@@ -11,7 +11,6 @@ const Realisations = () => {
       <Helmet>
         <title>Cartographie des réalisations</title>
       </Helmet>
-      <h1>Cartographie des réalisations</h1>
       <Row>
         <Col sm={12} md={3} lg={3}>
           <ul className='sidebar'>
