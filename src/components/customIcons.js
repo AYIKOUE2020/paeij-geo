@@ -12,7 +12,7 @@ export const blueMarker = new L.Icon({
   shadowUrl: null,
   shadowSize: null,
   shadowAnchor: null,
-  iconSize: new L.Point(20, 35),
+  iconSize: new L.Point(15, 30),
   className: "",
 })
 export const greenMarker = new L.Icon({
@@ -23,7 +23,7 @@ export const greenMarker = new L.Icon({
   shadowUrl: null,
   shadowSize: null,
   shadowAnchor: null,
-  iconSize: new L.Point(20, 35),
+  iconSize: new L.Point(15, 30),
   className: "",
 })
 export const orangeMarker = new L.Icon({
@@ -34,7 +34,7 @@ export const orangeMarker = new L.Icon({
   shadowUrl: null,
   shadowSize: null,
   shadowAnchor: null,
-  iconSize: new L.Point(20, 35),
+  iconSize: new L.Point(15, 30),
   className: "",
 })
 export const pinkMarker = new L.Icon({
@@ -45,6 +45,6 @@ export const pinkMarker = new L.Icon({
   shadowUrl: null,
   shadowSize: null,
   shadowAnchor: null,
-  iconSize: new L.Point(20, 35),
+  iconSize: new L.Point(15, 30),
   className: "",
 })
