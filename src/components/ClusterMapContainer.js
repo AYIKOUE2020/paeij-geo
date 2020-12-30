@@ -12,21 +12,24 @@ import {
 import Loader from "./Loader"
 import Notification from "./Notification"
 import PopupContainer from "./PopupContainer"
-import { getChaineValeur } from "../store/actions/chaineValeurAction"
+import { clusterSidebarMenu } from "../utils/arrayUtils"
+import { getCluster } from "../store/actions/clusterAction"
 
-const ChaineValeurMapComponent = () => {
-  let { filiere } = useParams()
+const ClusterMapContainer = () => {
+  let { cluster } = useParams()
+
+  const clusterName = clusterSidebarMenu.find((x) => x.link === cluster)["name"]
 
   const dispatch = useDispatch()
   const [tgKml, setTgKml] = useState(null)
-  const filieresList = useSelector((state) => state.filieresList)
+  const clustersList = useSelector((state) => state.clustersList)
 
-  const { loading, error, filieres } = filieresList
+  const { loading, error, clusters } = clustersList
 
   const position = [8.6, 1]
   useEffect(() => {
-    dispatch(getChaineValeur(filiere))
-  }, [filiere, dispatch])
+    dispatch(getCluster(clusterName))
+  }, [clusterName, dispatch])
 
   useEffect(() => {
     fetch("https://cors-anywhere.herokuapp.com/http://i2setg.com/kml/TGO.kml")
@@ -41,8 +44,9 @@ const ChaineValeurMapComponent = () => {
   if (error) {
     return (
       <Notification variant='danger'>
-        {error === "Network Error" &&
-          "Aucune connexion à internet, Prière vous connectez à internet"}
+        {error === "Network Error"
+          ? "Aucune connexion à internet, Prière vous connectez à internet"
+          : error}
       </Notification>
     )
   }
@@ -56,8 +60,8 @@ const ChaineValeurMapComponent = () => {
       {tgKml && <ReactLeafletKml kml={tgKml} />}
       {loading && <Loader />}
 
-      {filieres &&
-        filieres.map((item) => (
+      {clusters &&
+        clusters.map((item) => (
           <Marker
             position={[item.latitude, item.longitude]}
             key={item.id}
@@ -80,4 +84,4 @@ const ChaineValeurMapComponent = () => {
   )
 }
 
-export default ChaineValeurMapComponent
+export default ClusterMapContainer

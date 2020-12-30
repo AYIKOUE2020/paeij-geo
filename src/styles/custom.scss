@@ -92,18 +92,25 @@ h2 {
   list-style: none;
   padding-left: 0;
   li {
-    padding: 1rem 0;
     a {
       text-decoration: none;
+      display: block;
       color: #bdffb5;
-      font-size: 1.3rem;
       width: 100%;
       padding: 1rem;
+      margin: 2px;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 2px;
+      transition: 0.5s all ease-in-out;
       &.active {
         color: #ffffff;
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        border-radius: 4px;
+      }
+      &:hover {
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        border-radius: 4px;
       }
     }
   }
@@ -111,7 +118,4 @@ h2 {
 
 .sidebar-card {
   background: linear-gradient(to right, #11998e, #38ef7d);
-}
-
-.leaflet-popup-content {
 }

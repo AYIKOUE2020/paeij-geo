@@ -28,3 +28,39 @@ export const benefByCampObjectToArray = (data) => {
     }
   })
 }
+
+//Cluster Menu
+export const clusterSidebarMenu = [
+  { name: "AGROKOM", short: "agrokom", link: "agrokom" },
+  { name: "AUDELA", short: "audela", link: "audela" },
+  {
+    name: "Agro- Vision - Initiatives (AVI) Sarl",
+    short: "avi",
+    link: "agro-vision-initiatives-avi-sarl",
+  },
+  { name: "CAT Sarl", short: "cat", link: "cat-sarl" },
+  {
+    name: "Ets AL WALID Agrobusiness",
+    short: "walid",
+    link: "ets-al-walid-agrobusiness",
+  },
+  {
+    name: "Food and Home International",
+    short: "International",
+    link: "food-and-home-international",
+  },
+  {
+    name: "Gold Food Africa Sarl",
+    short: "gold",
+    link: "gold-food-africa-sarl",
+  },
+  { name: "JCAT Sarl", short: "jcat", link: "jcat-sarl" },
+  { name: "NSCPA", short: "nscpa", link: "nscpa" },
+  { name: "PME Kossi", short: "kossi", link: "pme-kossi" },
+  { name: "SAM Sarl", short: "sam", link: "sam-sarl" },
+  { name: "SCOOPS COACOM", short: "coacom", link: "scoops-coacom" },
+  { name: "TOGO TRADE HUB", short: "togo", link: "togo-trade-hub" },
+  { name: "ALCASA", short: "alcasa", link: "alcasa" },
+  { name: "QSI", short: "qsi", link: "qsi" },
+  { name: "SCOOPS RVPBT", short: "rvpbt", link: "scoops-rvpbt" },
+]

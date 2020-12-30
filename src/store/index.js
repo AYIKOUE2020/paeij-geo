@@ -9,6 +9,7 @@ import {
 } from "./reducers/searchReducer"
 import { dashboardDetails, dashboardList } from "./reducers/dashboardReducer"
 import { chaineValeurReducer } from "./reducers/chaineValeurReducer"
+import { clusterReducer } from "./reducers/clusterReducer"
 
 const reducers = combineReducers({
   homePageStats: homePageStatsReducer,
@@ -18,6 +19,7 @@ const reducers = combineReducers({
   realisationsList: dashboardList,
   realisationDetails: dashboardDetails,
   filieresList: chaineValeurReducer,
+  clustersList: clusterReducer,
 })
 
 const middleware = [thunk]

@@ -9,9 +9,9 @@ import store from "./store"
 import "leaflet/dist/leaflet.css"
 
 //Production
-//axios.defaults.baseURL = "https://api-paeij.i2setg.com/api"
+axios.defaults.baseURL = "https://api-paeij.i2setg.com/api"
 //Development
-axios.defaults.baseURL = "http://paeijsp.test/api/"
+//axios.defaults.baseURL = "http://paeijsp.test/api/"
 axios.defaults.headers.common["Accept"] = "application/json"
 
 ReactDOM.render(
