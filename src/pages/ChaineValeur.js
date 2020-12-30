@@ -16,7 +16,7 @@ const ChaineValeur = () => {
     { name: "Manioc", link: "manioc" },
     { name: "Gari", link: "gari" },
     { name: "Soja", link: "soja" },
-    { name: "Huile palmiste", link: "huile-palmiste" },
+    { name: "Huile palmiste", link: "huile" },
     { name: "Distribution", link: "distribution" },
     { name: "Caprins", link: "caprins" },
     { name: "Ovins", link: "ovins" },

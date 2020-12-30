@@ -8,6 +8,7 @@ import {
   villageReducer,
 } from "./reducers/searchReducer"
 import { dashboardDetails, dashboardList } from "./reducers/dashboardReducer"
+import { chaineValeurReducer } from "./reducers/chaineValeurReducer"
 
 const reducers = combineReducers({
   homePageStats: homePageStatsReducer,
@@ -16,6 +17,7 @@ const reducers = combineReducers({
   villagesList: villageReducer,
   realisationsList: dashboardList,
   realisationDetails: dashboardDetails,
+  filieresList: chaineValeurReducer,
 })
 
 const middleware = [thunk]

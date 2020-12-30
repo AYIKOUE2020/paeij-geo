@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Card,Button } from "react-bootstrap"
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 import { useDispatch, useSelector } from "react-redux"
 import ReactLeafletKml from "react-leaflet-kml"
@@ -12,7 +11,9 @@ import {
   pinkMarker,
 } from "../components/customIcons"
 import { getRealisations } from "../store/actions/dashboardAction"
-
+import Loader from "./Loader"
+import Notification from "./Notification"
+import PopupContainer from "./PopupContainer"
 
 const MapComponent = () => {
   let { composante } = useParams()
@@ -25,9 +26,9 @@ const MapComponent = () => {
   })
   const dispatch = useDispatch()
   const [tgKml, setTgKml] = useState(null)
-  const realisations = useSelector(
-    (state) => state.realisationsList.realisations
-  )
+  const realisationsList = useSelector((state) => state.realisationsList)
+
+  const { loading, error, realisations } = realisationsList
 
   const position = [8.6, 1]
   useEffect(() => {
@@ -44,6 +45,15 @@ const MapComponent = () => {
       })
   }, [])
 
+  if (error) {
+    return (
+      <Notification variant='danger'>
+        {error === "Network Error" &&
+          "Aucune connexion à internet, Prière vous connectez à internet"}
+      </Notification>
+    )
+  }
+
   return (
     <MapContainer center={position} zoom={8} scrollWheelZoom={false}>
       <TileLayer
@@ -51,6 +61,8 @@ const MapComponent = () => {
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       {tgKml && <ReactLeafletKml kml={tgKml} />}
+      {loading && <Loader />}
+
       {realisations &&
         realisations.map((item) => (
           <Marker
@@ -67,17 +79,7 @@ const MapComponent = () => {
             }
           >
             <Popup>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img
-                  variant='top'
-                  src='https://paeij-photos.i2setg.com/media/1603020250937.jpg'
-                />
-                <Card.Body>
-                  <Card.Title>{item.composante}</Card.Title>
-                  <Card.Text>infos</Card.Text>
-                  <Button variant='primary'>Détails</Button>
-                </Card.Body>
-              </Card>
+              <PopupContainer item={item} />
             </Popup>
           </Marker>
         ))}
