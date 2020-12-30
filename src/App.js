@@ -9,6 +9,9 @@ import Recherche from "./pages/Recherche"
 import Statistiques from "./pages/Statistiques"
 import Liste from "./pages/Liste"
 import Layout from "./components/Layout"
+import Groupement from "./pages/Groupement"
+import Primo from "./pages/Primo"
+import Pme from "./pages/Pme"
 
 const App = () => {
   return (
@@ -40,6 +43,16 @@ const App = () => {
             </Route>
             <Route path='/search'>
               <Recherche />
+            </Route>
+            <Route path='/groupement/:id'>
+              <Groupement />
+            </Route>
+            <Route path='/primo/:id'>
+              <Primo />
+            </Route>
+
+            <Route path='/pme/:id'>
+              <Pme />
             </Route>
           </Switch>
         </Layout>

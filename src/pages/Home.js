@@ -105,9 +105,9 @@ const Home = () => {
             />
           </Col>
         </Row>
-        <h2 className='my-3'>Filières ciblées</h2>
-        <Row>
-          <Col>
+        <Row className='mt-4'>
+          <Col sm={12} md={6}>
+            <h2 className='my-3'>Filières ciblées</h2>
             <p className='d-flex align-items-center'>
               <FaCheckSquare color='#116c52' />
               <span className='ml-3'>
@@ -131,10 +131,8 @@ const Home = () => {
               <span className='ml-3'>Petits ruminants ; etc.</span>
             </p>
           </Col>
-        </Row>
-        <Row className='mt-3'>
-          <Col>
-            <h2 className=''>Zones d’intervention</h2>
+          <Col sm={12} md={6}>
+            <h2 className='my-3'>Zones d’intervention</h2>
             <p className='d-flex align-items-center'>
               Territorial national, avec une forte concentration des activités
               dans les régions les plus pauvres (savanes, centrale et plateaux).
